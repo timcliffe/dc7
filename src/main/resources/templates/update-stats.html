@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p>WEEK _____</p>
+
+<form method="post" style="max-width:600px;" th:object="${nation}">
+    <div class="form-group">
+        <label th:for="name">New Territories</label>
+        <input class="form-control" th:field="*{territory}" />
+        <span th:errors="*{territory}" class="error"></span>
+        <select name="climateType">
+            <option th:each="climateType : ${climateTypes}"
+                    th:text="${climateType.name}"
+                    th:value="${category.id}"></option>
+        </select>
+    </div>
+
+    <input type="submit" value="Add More Territories" />
+
+    <p>City Upgrades:</p>
+    <tr th:each="city : ${cities}" >
+        <td th:text="${city.name}">
+            <select name="industrialTier">
+                <option value="Tier 1">Tier 0</option>
+                <option value="Tier 1">Tier 1</option>
+                <option value="Tier 1">Tier 2</option>
+                <option value="Tier 1">Tier 3</option>
+                <option value="Tier 1">Tier 4</option>
+            </select>
+            <select name="residentialTier">
+                <option value="Tier 1">Tier 0</option>
+                <option value="Tier 1">Tier 1</option>
+                <option value="Tier 1">Tier 2</option>
+                <option value="Tier 1">Tier 3</option>
+                <option value="Tier 1">Tier 4</option>
+            </select>
+
+        </td>
+    </tr>
+
+    <p>New Resources:</p>
+
+    <div class="form-group">
+        <label th:for="coal">Coal</label>
+        <input class="form-control" th:field="*{resource.coal}" />
+        <span th:errors="*{resource.coal}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="oil">Oil</label>
+        <input class="form-control" th:field="*{resource.oil}" />
+        <span th:errors="*{resource.oil}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="iron">Iron</label>
+        <input class="form-control" th:field="*{resource.iron}" />
+        <span th:errors="*{resource.iron}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="aluminum">Aluminum</label>
+        <input class="form-control" th:field="*{resource.aluminum}" />
+        <span th:errors="*{resource.aluminum}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="timber">Timber</label>
+        <input class="form-control" th:field="*{resource.timber}" />
+        <span th:errors="*{resource.timber}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="food">Food</label>
+        <input class="form-control" th:field="*{resource.food}" />
+        <span th:errors="*{resource.food}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="cashCrops">Cash Crops</label>
+        <input class="form-control" th:field="*{resource.cashCrops}" />
+        <span th:errors="*{resource.cashCrops}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="opium">Opium</label>
+        <input class="form-control" th:field="*{resource.opium}" />
+        <span th:errors="*{resource.opium}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="helium">Helium</label>
+        <input class="form-control" th:field="*{resource.helium}" />
+        <span th:errors="*{resource.helium}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="luxuryMinerals">Luxury Minerals</label>
+        <input class="form-control" th:field="*{resource.luxuryMinerals}" />
+        <span th:errors="*{resource.luxuryMinerals}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Update Stats" />
+</form>
+</body>
+</html>
