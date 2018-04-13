@@ -1,8 +1,6 @@
-package org.launchcode.models;
+package com.tcliffe.dc7.models;
 
-import javax.persistence.Entity;
 
-@Entity
 public class Unit {
 
     private int id;

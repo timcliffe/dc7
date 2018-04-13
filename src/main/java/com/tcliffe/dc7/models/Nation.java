@@ -1,8 +1,6 @@
-package org.launchcode.models;
+package com.tcliffe.dc7.models;
 
-import javax.persistence.Entity;
 
-@Entity
 public class Nation {
 
     private String name;
@@ -19,13 +17,13 @@ public class Nation {
 
     private int totalManpower;
 
-    private City cities;
+    private com.tcliffe.dc7.models.City cities;
 
     private Resource resources;
 
-    private Territory territories;
+    private com.tcliffe.dc7.models.Territory territories;
 
-    private Unit units;
+    private com.tcliffe.dc7.models.Unit units;
 
     public String getName() {
         return name;
@@ -55,7 +53,7 @@ public class Nation {
         return totalManpower;
     }
 
-    public City getCities() {
+    public com.tcliffe.dc7.models.City getCities() {
         return cities;
     }
 
@@ -63,11 +61,11 @@ public class Nation {
         return resources;
     }
 
-    public Territory getTerritories() {
+    public com.tcliffe.dc7.models.Territory getTerritories() {
         return territories;
     }
 
-    public Unit getUnits() {
+    public com.tcliffe.dc7.models.Unit getUnits() {
         return units;
     }
 
@@ -95,7 +93,7 @@ public class Nation {
         this.totalManpower = totalManpower;
     }
 
-    public void setCities(City cities) {
+    public void setCities(com.tcliffe.dc7.models.City cities) {
         this.cities = cities;
     }
 
@@ -103,11 +101,11 @@ public class Nation {
         this.resources = resources;
     }
 
-    public void setTerritories(Territory territories) {
+    public void setTerritories(com.tcliffe.dc7.models.Territory territories) {
         this.territories = territories;
     }
 
-    public void setUnits(Unit units) {
+    public void setUnits(com.tcliffe.dc7.models.Unit units) {
         this.units = units;
     }
 }

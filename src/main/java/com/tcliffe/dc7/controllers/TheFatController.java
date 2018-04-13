@@ -1,6 +1,6 @@
-package org.launchcode.controllers;
+package com.tcliffe.dc7.controllers;
 
-import org.launchcode.dc7statsproject1.Models.Data.NationDao;
+import com.tcliffe.dc7.models.data.NationDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
