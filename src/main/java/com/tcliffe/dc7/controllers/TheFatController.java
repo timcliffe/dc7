@@ -1,5 +1,4 @@
 package com.tcliffe.dc7.controllers;
-
 import com.tcliffe.dc7.models.data.NationDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TheFatController {
 
     @Autowired
-    private NationDao nationDao;
+    public NationDao nationDao;
 
     @RequestMapping(value = "")
     public String index(Model model) {

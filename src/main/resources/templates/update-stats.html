@@ -12,17 +12,94 @@
 
 <form method="post" style="max-width:600px;" th:object="${nation}">
     <div class="form-group">
-        <label th:for="name">New Territories</label>
-        <input class="form-control" th:field="*{territory}" />
-        <span th:errors="*{territory}" class="error"></span>
-        <select name="climateType">
-            <option th:each="climateType : ${climateTypes}"
-                    th:text="${climateType.name}"
-                    th:value="${category.id}"></option>
-        </select>
+        <label th:for="coal">Tundra</label>
+        <input class="form-control" th:field="*{territory.tundra}" />
+        <span th:errors="*territory.tundra}" class="error"></span>
     </div>
 
-    <input type="submit" value="Add More Territories" />
+    <div class="form-group">
+        <label th:for="coal">Subarctic</label>
+        <input class="form-control" th:field="*{territory.subarctic}" />
+        <span th:errors="*territory.subarctic}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Tundra</label>
+        <input class="form-control" th:field="*{territory.tundra}" />
+        <span th:errors="*territory.tundra}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Continental</label>
+        <input class="form-control" th:field="*{territory.continental}" />
+        <span th:errors="*territory.continental}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Oceanic</label>
+        <input class="form-control" th:field="*{territory.oceanic}" />
+        <span th:errors="*territory.oceanic}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Mediterranean</label>
+        <input class="form-control" th:field="*{territory.mediterranean}" />
+        <span th:errors="*territory.mediterranean}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Subtropical</label>
+        <input class="form-control" th:field="*{territory.subtropical}" />
+        <span th:errors="*territory.subtropical}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Jungle</label>
+        <input class="form-control" th:field="*{territory.jungle}" />
+        <span th:errors="*territory.jungle}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Savannah</label>
+        <input class="form-control" th:field="*{territory.savannah}" />
+        <span th:errors="*territory.savannah}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Steppe</label>
+        <input class="form-control" th:field="*{territory.steppe}" />
+        <span th:errors="*territory.steppe}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Semiarid</label>
+        <input class="form-control" th:field="*{territory.semiarid}" />
+        <span th:errors="*territory.semiarid}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Desert</label>
+        <input class="form-control" th:field="*{territory.desert}" />
+        <span th:errors="*territory.desert}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Highland</label>
+        <input class="form-control" th:field="*{territory.highland}" />
+        <span th:errors="*territory.highland}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Marsh</label>
+        <input class="form-control" th:field="*{territory.marsh}" />
+        <span th:errors="*territory.marsh}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="coal">Icecap</label>
+        <input class="form-control" th:field="*{territory.icecap}" />
+        <span th:errors="*territory.icecap}" class="error"></span>
+    </div>
 
     <p>City Upgrades:</p>
     <tr th:each="city : ${cities}" >
@@ -44,6 +121,17 @@
 
         </td>
     </tr>
+
+    <p>Add New City:</p>
+
+    <form method="post" style="max-width:600px;" th:object="${city}">
+        <div class="form-group">
+            <label th:for="name">Name</label>
+            <input class="form-control" th:field="*{city.name}" />
+            <span th:errors="*{city.name}" class="error"></span>
+        </div>
+    </form>
+
 
     <p>New Resources:</p>
 

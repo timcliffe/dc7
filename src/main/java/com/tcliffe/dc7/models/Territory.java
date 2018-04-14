@@ -1,8 +1,11 @@
 package com.tcliffe.dc7.models;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-
+@Entity
 public class Territory {
 
     public Territory(String climateType, int quantity, int populationBonus) {
@@ -13,6 +16,8 @@ public class Territory {
 
     private String climateType;
 
+    @Id
+    @GeneratedValue
     private int id;
 
     private int quantity;
