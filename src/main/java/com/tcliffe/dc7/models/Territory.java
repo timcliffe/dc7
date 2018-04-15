@@ -16,6 +16,9 @@ public class Territory {
 
     private String climateType;
 
+
+    private String name;
+
     @Id
     @GeneratedValue
     private int id;
@@ -23,6 +26,14 @@ public class Territory {
     private int quantity;
 
     private int populationBonus;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getId() {
         return id;
