@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8" />
+    <title><h1 th:text="${title}">My Country</h1></title>
+</head>
 
 <body class="container">
 
@@ -9,9 +12,11 @@
 
     <nav th:replace="fragments :: navigation"></nav>
 
+
     <p>Yee</p>
 
-    <h1 th:text="${nation.name}"></h1>
+
+    <h1 th:text="${name}">Nation Name</h1>
 
     <!--<p><h2 th:text="${nation.leader}"></h2></p>
 

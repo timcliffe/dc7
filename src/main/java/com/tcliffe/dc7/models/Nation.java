@@ -57,6 +57,7 @@ public class Nation {
         this.units = units;
     }
 
+    @NotNull
     public String getName() {
         return name;
     }
@@ -101,6 +102,7 @@ public class Nation {
         return units;
     }
 
+    @NotNull
     public void setName(String name) {
         this.name = name;
     }
