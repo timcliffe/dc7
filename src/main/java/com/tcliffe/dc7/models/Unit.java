@@ -4,6 +4,7 @@ package com.tcliffe.dc7.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Unit {
@@ -12,16 +13,22 @@ public class Unit {
     @GeneratedValue
     private int id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private String type;
 
+    @NotNull
     private String category;
 
+    @NotNull
     private int price;
 
+    @NotNull
     private int productionTime;
 
+    @NotNull
     private int quantity;
 
     public int getId() {

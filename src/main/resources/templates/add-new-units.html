@@ -7,3 +7,39 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${unit}">
+    <div class="form-group">
+        <label th:for="name">Name</label>
+        <input class="form-control" th:field="*{name}" />
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="type">Type</label>
+        <input class="form-control" th:field="*{type}" />
+        <span th:errors="*{type}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="category">Category</label>
+        <input class="form-control" th:field="*{category}" />
+        <span th:errors="*{category}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="price">Price</label>
+        <input class="form-control" th:field="*{price}" />
+        <span th:errors="*{price}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="productionTime">Production Time</label>
+        <input class="form-control" th:field="*{productionTime}" />
+        <span th:errors="*{productionTime}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Unit" />
+</form>
+</body>
+</html>

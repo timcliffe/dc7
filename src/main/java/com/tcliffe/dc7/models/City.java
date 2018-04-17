@@ -1,24 +1,32 @@
 package com.tcliffe.dc7.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "city")
 public class City {
     private String name;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotNull
     private int industrialTier;
 
+    @NotNull
     private int residentialTier;
 
+    @NotNull
     private int productionBonus;
 
+    @NotNull
     private int populationBonus;
+
+    @ManyToOne
+    @JoinColumn(name = "city_id")
+    public Nation nation;
 
     public City(String name, int id, int industrialTier, int residentialTier) {
         this.name = name;

@@ -1,35 +1,61 @@
 package com.tcliffe.dc7.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
+@Table(name = "nation")
 public class Nation {
 
+    @NotNull
     private String name;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotNull
     private String governmentType;
 
+    @NotNull
     private String leader;
 
+    @NotNull
     private int totalProduction;
 
+    @NotNull
     private int totalPopulation;
 
+    @NotNull
     private int totalManpower;
 
-    private com.tcliffe.dc7.models.City cities;
+    @OneToMany
+    @JoinColumn (name = "city_id")
+    private List<City> cities;
 
-    private Resource resources;
+    @OneToMany
+    private List<Resource> resources;
 
-    private com.tcliffe.dc7.models.Territory territories;
+    @OneToMany
+    private List<Territory> territories;
 
-    private com.tcliffe.dc7.models.Unit units;
+    @OneToMany
+    private List<Unit> units;
+
+    public Nation(@NotNull String name, int id, @NotNull String governmentType, @NotNull String leader, @NotNull int totalProduction, @NotNull int totalPopulation, @NotNull int totalManpower, List<City> cities, List<Resource> resources, List<Territory> territories, List<Unit> units) {
+        this.name = name;
+        this.id = id;
+        this.governmentType = governmentType;
+        this.leader = leader;
+        this.totalProduction = totalProduction;
+        this.totalPopulation = totalPopulation;
+        this.totalManpower = totalManpower;
+        this.cities = cities;
+        this.resources = resources;
+        this.territories = territories;
+        this.units = units;
+    }
 
     public String getName() {
         return name;
@@ -59,19 +85,19 @@ public class Nation {
         return totalManpower;
     }
 
-    public com.tcliffe.dc7.models.City getCities() {
-        return cities;
+    public List<City> getCities() {
+        return cities ;
     }
 
-    public Resource getResources() {
+    public List<Resource> getResources() {
         return resources;
     }
 
-    public com.tcliffe.dc7.models.Territory getTerritories() {
+    public List<Territory> getTerritories() {
         return territories;
     }
 
-    public com.tcliffe.dc7.models.Unit getUnits() {
+    public List<Unit> getUnits() {
         return units;
     }
 
@@ -99,19 +125,19 @@ public class Nation {
         this.totalManpower = totalManpower;
     }
 
-    public void setCities(com.tcliffe.dc7.models.City cities) {
-        this.cities = cities;
+    public void setCities(City cities) {
+        this.cities.add(cities);
     }
 
     public void setResources(Resource resources) {
-        this.resources = resources;
+        this.resources.add(resources);
     }
 
-    public void setTerritories(com.tcliffe.dc7.models.Territory territories) {
-        this.territories = territories;
+    public void setTerritories(Territory territories) {
+        this.territories.add(territories);
     }
 
-    public void setUnits(com.tcliffe.dc7.models.Unit units) {
-        this.units = units;
+    public void setUnits(Unit units) {
+        this.units.add(units);
     }
 }

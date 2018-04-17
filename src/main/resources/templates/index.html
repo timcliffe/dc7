@@ -9,9 +9,11 @@
 
     <nav th:replace="fragments :: navigation"></nav>
 
-    <p><h1 th:text="${nation.name}"></h1></p>
+    <p>Yee</p>
 
-    <p><h2 th:text="${nation.leader}"></h2></p>
+    <h1 th:text="${nation.name}"></h1>
+
+    <!--<p><h2 th:text="${nation.leader}"></h2></p>
 
     <p><h2 th:text="${nation.governmentType}"></h2></p>
 
@@ -94,6 +96,8 @@
         <td th:text="${unit.name}"></td>
         <td th:text="${unit.quantity}"></td>
     </tr>
-</div>
+
+    <input type="submit" value="Update Stats" />
+--></div>
 </body>
 </html>

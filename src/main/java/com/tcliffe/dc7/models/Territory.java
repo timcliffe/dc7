@@ -4,6 +4,7 @@ package com.tcliffe.dc7.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Territory {
@@ -14,17 +15,21 @@ public class Territory {
         this.populationBonus = populationBonus;
     }
 
+    @NotNull
     private String climateType;
 
 
+    @NotNull
     private String name;
 
     @Id
     @GeneratedValue
     private int id;
 
+    @NotNull
     private int quantity;
 
+    @NotNull
     private int populationBonus;
 
     public String getName() {

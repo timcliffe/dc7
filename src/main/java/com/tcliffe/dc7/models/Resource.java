@@ -3,6 +3,7 @@ package com.tcliffe.dc7.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Resource {
@@ -11,8 +12,10 @@ public class Resource {
     @GeneratedValue
     private int id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private int quantity;
 
     public Resource(int id, String name, int quantity) {
